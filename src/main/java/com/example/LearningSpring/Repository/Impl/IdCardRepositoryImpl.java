@@ -22,7 +22,7 @@ public class IdCardRepositoryImpl implements IdCardRepository {
 
     @Override
     public List<IdCard> getAll() {
-        String query = "SELECT i.id, i.name, i.surname, i.age, i.fin_code, i.series, i.serial_number FROM vs_learning.id_card i;";
+        String query = "SELECT i.id, i.name, i.surname, i.age, i.fincode, i.series, i.serial_number FROM passenger_system.idtable i;";
 
         RowMapper<IdCard> rowMapper = new RowMapper<>() {
             @Override
@@ -36,7 +36,7 @@ public class IdCardRepositoryImpl implements IdCardRepository {
 
     @Override
     public IdCard getById(Long id) {
-        String query = "SELECT idtable.id, idtable.name, idtable.surname, idtable.age, idtable.fincode, idtable.series, idtable.serial_number FROM id_card.idtable i WHERE i.id = ?";
+        String query = "SELECT i.id, i.name, i.surname, i.age, i.fincode, i.series, i.serial_number FROM passenger_system.idtable i WHERE i.id = ?";
 
         RowMapper<IdCard> rowMapper = new RowMapper<IdCard>() {
             @Override
@@ -57,7 +57,7 @@ public class IdCardRepositoryImpl implements IdCardRepository {
 
     @Override
     public boolean insert(IdCard idCard) {
-        String query = "INSERT INTO id_card.idtable (name, surname, age, fincode, series, serial_number) VALUES (?, ?, ?, ?, ?, ?);";
+        String query = "INSERT INTO passenger_system.idtable (name, surname, age, fincode, series, serial_number) VALUES (?, ?, ?, ?, ?, ?);";
 
         int res = jdbcTemplate.update(query, idCard.getName(), idCard.getSurname(), idCard.getAge(), idCard.getFinCode(), idCard.getSeries(), idCard.getSerialNumber());
 
@@ -66,7 +66,7 @@ public class IdCardRepositoryImpl implements IdCardRepository {
 
     @Override
     public boolean update(IdCard idCard) {
-        String query = "UPDATE id_card.idtable i SET i.name = ?, i.surname = ?, i.age = ?, i.fin_code = ?, series = ?, i.serial_number = ? WHERE i.id = ?";
+        String query = "UPDATE passenger_system.idtable i SET i.name = ?, i.surname = ?, i.age = ?, i.fincode = ?, series = ?, i.serial_number = ? WHERE i.id = ?";
 
         int res = jdbcTemplate.update(query, idCard.getName(), idCard.getSurname(), idCard.getAge(), idCard.getFinCode(), idCard.getSeries(), idCard.getSerialNumber(), idCard.getId());
 
@@ -75,7 +75,7 @@ public class IdCardRepositoryImpl implements IdCardRepository {
 
     @Override
     public boolean updateAge(Long id, Integer age) {
-        String query = "UPDATE id_card.idtable i SET i.age = ? WHERE i.id = ?";
+        String query = "UPDATE passenger_system.idtable i SET i.age = ? WHERE i.id = ?";
 
         int res = jdbcTemplate.update(query, age, id);
 
@@ -84,7 +84,7 @@ public class IdCardRepositoryImpl implements IdCardRepository {
 
     @Override
     public boolean delete(Long id) {
-        String query = "DELETE FROM id_card.idtable i WHERE i.id = ?;";
+        String query = "DELETE FROM passenger_system.idtable i WHERE i.id = ?;";
 
         int res = jdbcTemplate.update(query, id);
 
