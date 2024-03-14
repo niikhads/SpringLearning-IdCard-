@@ -39,11 +39,11 @@ public class IdCardController {
         return ResponseEntity.ok(idCard);
     }
 
-//    @GetMapping("/id")
-//    public ResponseEntity<IdCardResponse> getIdCardById(@RequestParam("id") Long id) {
-//        IdCardResponse idCard = idCardService.getIdCardById(id);
-//        return ResponseEntity.ok(idCard);
-//    }
+ //   @GetMapping("/id")
+  //  public ResponseEntity<IdCardResponse> getIdCardById(@RequestParam("id") Long id) {
+  //      IdCardResponse idCard = idCardService.getIdCardById(id);
+   //    return ResponseEntity.ok(idCard);
+ //  }
 
 
 //    @GetMapping("/id")
