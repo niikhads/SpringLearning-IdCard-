@@ -6,11 +6,15 @@ import com.example.LearningSpring.Model.Dto.Response.IdCardResponse;
 import com.example.LearningSpring.Model.Entity.IdCard;
 import com.example.LearningSpring.Repository.IdCardRepository;
 import com.example.LearningSpring.Service.IdCardService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
+
 @Service
+//@RequiredArgsConstructor
 public class IdCardServiceImpl implements IdCardService {
 
     private final IdCardMapper idCardMapper;
@@ -41,8 +45,13 @@ public class IdCardServiceImpl implements IdCardService {
 
     @Override
     public void addIdCard(IdCardRequest idCardRequest) {
+        log.info("AddIdCard request recieved.IdCardRequest: {}" , idCardRequest);
         IdCard idCard = idCardMapper.toIdCard(idCardRequest);
+        log.info("IdCardRequest mapped to IdCard, IdCard : {}", idCard);
         idCardRepository.insert(idCard);
+        log.info("ADD process sucsesfull.");
+        log.warn("Just warning {}" , idCardRequest);
+        log.error("Just error {}", idCardRequest);
     }
 
     @Override

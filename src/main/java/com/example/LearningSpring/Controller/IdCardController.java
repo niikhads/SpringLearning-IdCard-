@@ -4,6 +4,7 @@ import com.example.LearningSpring.Model.Dto.Request.IdCardRequest;
 import com.example.LearningSpring.Model.Dto.Response.IdCardResponse;
 import com.example.LearningSpring.Service.IdCardService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -27,13 +28,13 @@ public class IdCardController {
         this.idCardService = idCardService;
     }
 
-    @GetMapping
+    @GetMapping("/no-auth") //Security ucun mecburiyyetden verilib
     public ResponseEntity<List<IdCardResponse>> getAllIdCards() {
         List<IdCardResponse> idCards = idCardService.getAllIdCards();
         return ResponseEntity.ok(idCards);
     }
 
-    @GetMapping("/id/{id}")
+    @GetMapping("/no-auth/id/{id}")    //Securityden sonra no-auth yazilub
     public ResponseEntity<IdCardResponse> getIdCardById(@PathVariable("id") Long id) {
         IdCardResponse idCard = idCardService.getIdCardById(id);
         return ResponseEntity.ok(idCard);
@@ -72,7 +73,8 @@ public class IdCardController {
         return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping("/id/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @DeleteMapping("/admin/id/{id}")
     public ResponseEntity<Void> deleteIdCardById(@PathVariable Long id){
         idCardService.deleteIdCard(id);
         return ResponseEntity.ok().build();

@@ -2,23 +2,20 @@ package com.example.LearningSpring.Repository.Impl;
 
 import com.example.LearningSpring.Model.Entity.IdCard;
 import com.example.LearningSpring.Repository.IdCardRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
+@RequiredArgsConstructor
 public class IdCardRepositoryImpl implements IdCardRepository {
 
     private final JdbcTemplate jdbcTemplate;
-
-    public IdCardRepositoryImpl(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
 
     @Override
     public List<IdCard> getAll() {
