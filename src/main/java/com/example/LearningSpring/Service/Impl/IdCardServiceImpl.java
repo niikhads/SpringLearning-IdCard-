@@ -34,6 +34,7 @@ public class IdCardServiceImpl implements IdCardService {
         return idCardResponseList;
     }
 
+
     @Override
     public IdCardResponse getIdCardById(Long id) {
         IdCard idCard = idCardRepository.getById(id);
