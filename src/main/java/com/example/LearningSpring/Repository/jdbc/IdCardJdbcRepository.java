@@ -1,11 +1,11 @@
-package com.example.LearningSpring.Repository;
+package com.example.LearningSpring.Repository.jdbc;
 
 
 import com.example.LearningSpring.Model.Entity.IdCard;
 
 import java.util.List;
 
-public interface IdCardRepository {
+public interface IdCardJdbcRepository {
 
     List<IdCard> getAll();
     IdCard getById(Long id);

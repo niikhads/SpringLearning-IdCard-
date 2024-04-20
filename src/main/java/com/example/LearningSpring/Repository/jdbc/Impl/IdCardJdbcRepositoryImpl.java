@@ -1,7 +1,7 @@
-package com.example.LearningSpring.Repository.Impl;
+package com.example.LearningSpring.Repository.jdbc.Impl;
 
 import com.example.LearningSpring.Model.Entity.IdCard;
-import com.example.LearningSpring.Repository.IdCardRepository;
+import com.example.LearningSpring.Repository.jdbc.IdCardJdbcRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -13,7 +13,7 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class IdCardRepositoryImpl implements IdCardRepository {
+public class IdCardJdbcRepositoryImpl implements IdCardJdbcRepository {
 
     private final JdbcTemplate jdbcTemplate;
 

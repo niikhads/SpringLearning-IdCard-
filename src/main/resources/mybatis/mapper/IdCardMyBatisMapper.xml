@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.LearningSpring.Repository.mapper.IdCardMyBatisRepository">
+
+    <select id="findAll" resultType="IdCard">
+        SELECT <include refid="idCardBaseColumns"></include>
+        FROM passenger_system.id_table i
+    </select>
+
+    <select id="findById" resultType="IdCard">
+        SELECT <include refid="idCardBaseColumns"></include>
+        FROM passenger_system.id_table i
+        <where>
+            i.id = #{id}
+        </where>
+    </select>
+
+    <insert id="insert">
+        INSERT
+        INTO passenger_system.id_table (name,
+        surname,
+        age,
+        fin_code,
+        series,
+        serial_number)
+        VALUES (#{name, jdbcType=NVARCHAR},
+        #{surname, jdbcType=NVARCHAR},
+        #{age},
+        #{finCode},
+        #{series},
+        #{serialNumber})
+    </insert>
+
+    <update id="update">
+        UPDATE passenger_system.id_table i
+        SET i.name = #{name, jdbcType=NVARCHAR},
+        i.surname = #{surname, jdbcType=NVARCHAR},
+        i.age = #{age},
+        i.fin_code = #{finCode},
+        series = #{series},
+        i.serial_number = #{serialNumber}
+        <where>
+            i.id = #{id}
+        </where>
+    </update>
+
+    <update id="updateAge">
+        UPDATE passenger_system.id_table i
+        SET i.age = #{age}
+        <where>
+            i.id = #{id}
+        </where>
+    </update>
+
+    <delete id="delete">
+        DELETE
+        FROM passenger_system.id_table i
+        <where>
+            i.id = #{id}
+        </where>
+    </delete>
+
+    <sql id="idCardBaseColumns">
+        i.id,
+        i.name,
+        i.surname,
+        i.age,
+        i.fin_code,
+        i.series,
+        i.serial_number
+    </sql>
+
+</mapper>
