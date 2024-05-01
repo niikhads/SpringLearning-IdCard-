@@ -12,4 +12,5 @@ public interface UserMyBatisRepository {
     void insert(User user);
     Optional<User> findByUsername(@Param("username") String username);
 
+
 }

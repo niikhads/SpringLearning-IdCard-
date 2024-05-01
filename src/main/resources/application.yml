@@ -1,0 +1,20 @@
+server :
+  port : 3000
+
+spring :
+  datasource :
+    url : jdbc:mysql://localhost:3306/passenger_system?useSSL=false
+    username : root
+    password : Nihad2004
+    driverClassName : com.mysql.cj.jdbc.Driver
+
+
+mybatis:
+  config-location : classpath:mybatis/mybatis-config.xml
+  mapper-locations : classpath:mybatis/mapper/*.xml
+  type-aliases-package : com.example.LearningSpring.Model.Entity
+
+
+security:
+  secret-key: CgTOA2QC9nxYspeBZBRsEIoDmpBbGTjfDCE6WfnOHHrA7rgHafqC5u1m6GL22pNY
+  expiration: 300000 #1000*60*5

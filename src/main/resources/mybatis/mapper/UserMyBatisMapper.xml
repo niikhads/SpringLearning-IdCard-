@@ -6,11 +6,11 @@
 
     <insert id="insert">
         INSERT
-        INTO passenger_system.id_table (username,
+        INTO passenger_system.user (username,
         password,
         name,
         surname,
-        createdAt)
+        created_at)
         VALUES (#{username},
         #{password},
         #{name, jdbcType=NVARCHAR},
@@ -18,4 +18,18 @@
         #{createdAt}
      )
     </insert>
-</mapper>
+    <select id="findByUsername" resultType="User">
+        SELECT <include refid="UserBaseColumns"></include>
+        from user u
+        where  u.username = #{username};
+    </select>
+    <sql id="UserBaseColumns">
+        u.id,
+        u.username,
+        u.password,
+        u.name,surname,
+        u.created_at,
+        u.last_login,
+        u.idcard_id
+    </sql>
+    </mapper>
