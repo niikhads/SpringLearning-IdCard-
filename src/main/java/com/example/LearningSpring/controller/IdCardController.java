@@ -1,7 +1,7 @@
-package com.example.LearningSpring.Controller;
+package com.example.LearningSpring.controller;
 
 import com.example.LearningSpring.Model.Dto.Request.IdCardRequest;
-import com.example.LearningSpring.Model.Dto.Response.IdCardResponse;
+import com.example.LearningSpring.Model.Dto.response.IdCardResponse;
 import com.example.LearningSpring.Service.IdCardService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

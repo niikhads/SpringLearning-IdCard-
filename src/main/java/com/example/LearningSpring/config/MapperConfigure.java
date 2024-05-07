@@ -17,3 +17,4 @@ public class MapperConfigure {
         return UserMapper.INSTANCE;
     }
 }
+//artiq lazim deyil exception hisseden -1 evvel

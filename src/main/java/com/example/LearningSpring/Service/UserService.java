@@ -2,8 +2,8 @@ package com.example.LearningSpring.Service;
 
 import com.example.LearningSpring.Model.Dto.Request.LoginRequest;
 import com.example.LearningSpring.Model.Dto.Request.RegisterRequest;
-import com.example.LearningSpring.Model.Dto.Response.LoginResponse;
-import com.example.LearningSpring.Model.Dto.Response.RegisterResponse;
+import com.example.LearningSpring.Model.Dto.response.LoginResponse;
+import com.example.LearningSpring.Model.Dto.response.RegisterResponse;
 import com.example.LearningSpring.Model.Entity.User;
 
 import java.util.Optional;

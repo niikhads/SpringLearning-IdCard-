@@ -1,4 +1,4 @@
-package com.example.LearningSpring.Model.Dto.Response;
+package com.example.LearningSpring.Model.Dto.response;
 
 
 import lombok.AllArgsConstructor;

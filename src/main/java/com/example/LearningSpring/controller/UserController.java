@@ -1,12 +1,12 @@
-package com.example.LearningSpring.Controller;
+package com.example.LearningSpring.controller;
 
 
 //import com.example.LearningSpring.Model.Dto.Request.LoginRequest;
 import com.example.LearningSpring.Model.Dto.Request.LoginRequest;
 import com.example.LearningSpring.Model.Dto.Request.RegisterRequest;
 //import com.example.LearningSpring.Model.Dto.Response.LoginResponse;
-import com.example.LearningSpring.Model.Dto.Response.LoginResponse;
-import com.example.LearningSpring.Model.Dto.Response.RegisterResponse;
+import com.example.LearningSpring.Model.Dto.response.LoginResponse;
+import com.example.LearningSpring.Model.Dto.response.RegisterResponse;
 import com.example.LearningSpring.Service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

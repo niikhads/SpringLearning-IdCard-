@@ -2,7 +2,7 @@ package com.example.LearningSpring.Service.Impl;
 
 import com.example.LearningSpring.Mapper.IdCardMapper;
 import com.example.LearningSpring.Model.Dto.Request.IdCardRequest;
-import com.example.LearningSpring.Model.Dto.Response.IdCardResponse;
+import com.example.LearningSpring.Model.Dto.response.IdCardResponse;
 import com.example.LearningSpring.Model.Entity.IdCard;
 import com.example.LearningSpring.Repository.mapper.IdCardMyBatisRepository;
 import com.example.LearningSpring.Service.IdCardService;

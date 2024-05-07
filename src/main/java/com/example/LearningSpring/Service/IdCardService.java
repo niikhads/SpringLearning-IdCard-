@@ -1,7 +1,7 @@
 package com.example.LearningSpring.Service;
 
 import com.example.LearningSpring.Model.Dto.Request.IdCardRequest;
-import com.example.LearningSpring.Model.Dto.Response.IdCardResponse;
+import com.example.LearningSpring.Model.Dto.response.IdCardResponse;
 
 import java.util.List;
 
